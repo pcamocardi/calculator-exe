@@ -4,16 +4,16 @@
   }
 }
 
-const aInput = document.getElementById(a) as HTMLInputElement;
-const bInput = document.getElementById(b) as HTMLInputElement;
-const button = document.getElementById(calc) as HTMLButtonElement;
-const resultEl = document.getElementById(result) as HTMLSpanElement;
+const aInput = document.getElementById("a") as HTMLInputElement;
+const bInput = document.getElementById("b") as HTMLInputElement;
+const button = document.getElementById("calc") as HTMLButtonElement;
+const resultEl = document.getElementById("result") as HTMLSpanElement;
 
-button.addEventListener(click, () => {
+button.addEventListener("click", () => {
   const a = Number(aInput.value);
   const b = Number(bInput.value);
   if (Number.isNaN(a) || Number.isNaN(b)) {
-    resultEl.textContent = NaN;
+    resultEl.textContent = "NaN";
     return;
   }
   const total = window.api.sum([a, b]);
