@@ -1,0 +1,28 @@
+{
+    "name": "sum_exe",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/main.js",
+    "scripts": {
+        "dist": "electron-builder",
+        "build": "tsc",
+        "pack": "electron-builder --dir",
+        "postbuild": "copyfiles -u 1 src/index.html src/styles.css dist",
+        "start": "electron .",
+        "dev": "electron ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^24.5.2",
+        "concurrently": "^9.2.1",
+        "copyfiles": "^2.4.1",
+        "electron": "^38.1.2",
+        "electron-builder": "^26.0.12",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.2",
+        "wait-on": "^9.0.1"
+    },
+    "type": "commonjs"
+}
