@@ -1,4 +1,4 @@
-﻿name: Build Windows Installer
+name: Build Windows Installer
 on:
   push:
   pull_request:
@@ -11,9 +11,11 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - run: node -v && npm -v
       - run: npm install
+      - run: npx tsc --version && npx tsc --noEmit
       - run: npm run build
-      - run: npm run dist
+      - run: npx electron-builder --win --publish never
       - uses: actions/upload-artifact@v4
         with:
           name: sum-electron-windows
