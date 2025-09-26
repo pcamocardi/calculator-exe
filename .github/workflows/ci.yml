@@ -1,0 +1,20 @@
+﻿name: Build Windows Installer
+on:
+  push:
+  pull_request:
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install
+      - run: npm run build
+      - run: npm run dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sum-electron-windows
+          path: dist/*.exe
