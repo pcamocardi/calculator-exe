@@ -24,5 +24,18 @@
         "typescript": "^5.9.2",
         "wait-on": "^9.0.1"
     },
-    "type": "commonjs"
+    "type": "commonjs",
+    "build": {
+        "publish": null,
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "main.js",
+            "preload.js",
+            "renderer.js",
+            "index.html",
+            "styles.css"
+        ]
+    }
 }
