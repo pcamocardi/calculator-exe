@@ -4,12 +4,13 @@
     "description": "",
     "main": "main.js",
     "scripts": {
-        "dist": "electron-builder",
+        "dist": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder",
         "build": "tsc",
-        "pack": "electron-builder --dir",
+        "pack": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --dir",
         "postbuild": "copyfiles -u 1 src/index.html src/styles.css src/renderer.js .",
         "start": "electron .",
-        "dev": "electron ."
+        "dev": "electron .",
+        "dist-no-sign": "electron-builder --win --x64 --publish=never"
     },
     "keywords": [],
     "author": "",
@@ -41,9 +42,13 @@
             "styles.css"
         ],
         "win": {
-            "target": "dir",
+            "target": {
+                "target": "dir",
+                "arch": ["x64"]
+            },
             "icon": null
         },
+        "publish": null,
         "nsis": {
             "oneClick": false,
             "allowToChangeInstallationDirectory": true
