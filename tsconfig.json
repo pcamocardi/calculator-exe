@@ -3,7 +3,7 @@
   "compilerOptions": {
     // File Layout
     "rootDir": "src",
-    "outDir": "dist",
+    "outDir": ".",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -45,5 +45,7 @@
     "skipLibCheck": true,
 
     "esModuleInterop": true,
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

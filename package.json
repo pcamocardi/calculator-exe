@@ -2,12 +2,12 @@
     "name": "sum_exe",
     "version": "1.0.0",
     "description": "",
-    "main": "dist/main.js",
+    "main": "main.js",
     "scripts": {
         "dist": "electron-builder",
         "build": "tsc",
         "pack": "electron-builder --dir",
-        "postbuild": "copyfiles -u 1 src/index.html src/styles.css dist",
+        "postbuild": "copyfiles -u 1 src/index.html src/styles.css src/renderer.js .",
         "start": "electron .",
         "dev": "electron ."
     },
