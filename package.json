@@ -41,11 +41,8 @@
             "styles.css"
         ],
         "win": {
-            "target": "portable",
-            "icon": null,
-            "forceCodeSigning": false,
-            "sign": null,
-            "verifyUpdateCodeSignature": false
+            "target": "dir",
+            "icon": null
         },
         "nsis": {
             "oneClick": false,
