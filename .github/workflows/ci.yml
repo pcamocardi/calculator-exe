@@ -17,7 +17,11 @@ jobs:
       - run: npm run dist-no-sign
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: false
+      - name: Create ZIP archive
+        run: Compress-Archive -Path "dist/win-unpacked/*" -DestinationPath "calculator-exe-windows-x64.zip"
       - uses: actions/upload-artifact@v4
         with:
           name: calculator-electron-windows
-          path: dist/win-unpacked/calculator_exe.exe
+          path: |
+            dist/win-unpacked/
+            calculator-exe-windows-x64.zip
