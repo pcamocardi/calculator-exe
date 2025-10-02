@@ -19,5 +19,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
-          name: sum-electron-windows
+          name: calculator-electron-windows
           path: dist/*.exe

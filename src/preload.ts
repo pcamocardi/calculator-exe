@@ -1,7 +1,7 @@
 ﻿import { contextBridge } from "electron";
 
 contextBridge.exposeInMainWorld("api", {
-  sum(numbers: number[]): number {
+  calculate(numbers: number[]): number {
     return numbers.reduce((acc, n) => acc + n, 0);
   },
 });

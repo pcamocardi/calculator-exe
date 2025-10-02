@@ -18,13 +18,13 @@
       return;
     }
     
-    if (!window.api || !window.api.sum) {
+    if (!window.api || !window.api.calculate) {
       resultEl.textContent = "API not available";
       return;
     }
     
-    const total = window.api.sum([a, b]);
-    console.log("Sum result:", total);
+    const total = window.api.calculate([a, b]);
+    console.log("Calculation result:", total);
     resultEl.textContent = String(total);
   });
 })();

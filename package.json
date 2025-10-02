@@ -1,5 +1,5 @@
 {
-    "name": "sum_exe",
+    "name": "calculator_exe",
     "version": "1.0.0",
     "description": "",
     "main": "main.js",
@@ -26,6 +26,9 @@
     },
     "type": "commonjs",
     "build": {
+        "appId": "com.calculator.app",
+        "productName": "Calculator",
+        "executableName": "calculator_exe",
         "publish": null,
         "directories": {
             "output": "dist"
@@ -36,6 +39,15 @@
             "renderer.js",
             "index.html",
             "styles.css"
-        ]
+        ],
+        "win": {
+            "target": "portable",
+            "icon": null,
+            "forceCodeSigning": false
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
     }
 }
