@@ -4,16 +4,73 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Calculator Executable</title>
+    <title>Advanced Calculator</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Calculator</h1>
-      <input id="a" placeholder="First number" />
-      <input id="b" placeholder="Second number" />
-      <button id="calc">Calculate</button>
-      <div class="output">Result: <span id="result">0</span></div>
+      <h1>Advanced Calculator</h1>
+      
+      <!-- Display -->
+      <div class="display">
+        <div class="result" id="result">0</div>
+        <div class="operation" id="operation"></div>
+      </div>
+      
+      <!-- Basic Operations -->
+      <div class="section">
+        <h3>Basic Operations</h3>
+        <div class="input-group">
+          <input id="num1" placeholder="First number" type="number" step="any" />
+          <select id="operation-select">
+            <option value="add">+ Add</option>
+            <option value="subtract">- Subtract</option>
+            <option value="multiply">× Multiply</option>
+            <option value="divide">÷ Divide</option>
+            <option value="power">^ Power</option>
+          </select>
+          <input id="num2" placeholder="Second number" type="number" step="any" />
+          <button id="calculate-basic">Calculate</button>
+        </div>
+      </div>
+      
+      <!-- Single Number Operations -->
+      <div class="section">
+        <h3>Single Number Operations</h3>
+        <div class="input-group">
+          <input id="single-num" placeholder="Enter number" type="number" step="any" />
+          <div class="button-grid">
+            <button class="single-op" data-op="sqrt">√ Square Root</button>
+            <button class="single-op" data-op="square">x² Square</button>
+            <button class="single-op" data-op="cube">x³ Cube</button>
+            <button class="single-op" data-op="factorial">n! Factorial</button>
+            <button class="single-op" data-op="abs">|x| Absolute</button>
+            <button class="single-op" data-op="sin">sin</button>
+            <button class="single-op" data-op="cos">cos</button>
+            <button class="single-op" data-op="tan">tan</button>
+            <button class="single-op" data-op="log">ln</button>
+            <button class="single-op" data-op="log10">log₁₀</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Constants -->
+      <div class="section">
+        <h3>Constants</h3>
+        <div class="constants">
+          <button id="pi-btn">π (Pi)</button>
+          <button id="e-btn">e (Euler's number)</button>
+        </div>
+      </div>
+      
+      <!-- Memory/History -->
+      <div class="section">
+        <h3>History</h3>
+        <div class="history" id="history">
+          <p class="history-empty">No calculations yet</p>
+        </div>
+        <button id="clear-history">Clear History</button>
+      </div>
     </div>
     <script src="./renderer.js"></script>
   </body>

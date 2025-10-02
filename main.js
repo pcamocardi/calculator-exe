@@ -37,8 +37,10 @@ const electron_1 = require("electron");
 const path = __importStar(require("path"));
 function createWindow() {
     const win = new electron_1.BrowserWindow({
-        width: 420,
-        height: 300,
+        width: 700,
+        height: 900,
+        minWidth: 600,
+        minHeight: 700,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,

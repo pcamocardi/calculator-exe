@@ -3,8 +3,10 @@ import * as path from "path";
 
 function createWindow(): void {
   const win = new BrowserWindow({
-    width: 420,
-    height: 300,
+    width: 700,
+    height: 900,
+    minWidth: 600,
+    minHeight: 700,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
